@@ -32,13 +32,9 @@ public class RekreativniPlaninar extends Planinar {
 
 	@Override
 	public boolean usepsanUspon(Planina planina) {
-		int maksOprema = this.maksimalniUspon + this.tezinaOpreme * 50;
+		int maksOprema = this.maksimalniUspon - this.tezinaOpreme * 50;
 
-		if (maksOprema < planina.getVisina()) {
-			return true;
-		} else {
-			return false;
-		}
+		return maksOprema > planina.getVisina()
 	}
 
 	@Override
